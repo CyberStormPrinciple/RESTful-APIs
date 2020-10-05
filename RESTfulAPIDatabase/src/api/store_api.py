@@ -17,7 +17,9 @@ class Item(Resource):
     def get(self, name):
         items = list_items()
         item = next(filter(lambda x: x['name'] == name, items), None)
-        return {'item': item}, 200 if item else 404
+        if item:
+            return {'item': item}
+        return {'message': 'Item not found'}, 404
 
     def post(self, name):
         items = list_items()
@@ -27,7 +29,10 @@ class Item(Resource):
             }, 400
         data = Item.parser.parse_args()
         item = {'name':name, 'price':data['price']}
-        insert_item(item['name'], item['price'])
+        try:
+            self.insert_item(item['name'], item['price'])
+        except:
+            return {"message": "An error occurred inserting the item."}, 500
         return item, 201
 
     def delete(self, name):
@@ -40,10 +45,16 @@ class Item(Resource):
         item = next(filter(lambda x: x['name'] == name, items), None)
         if item is None:
             item = {'name': name, 'price': data['price']}
-            insert_item(item['name'], item['price'])
+            try:
+                self.insert_item(item['name'], item['price'])
+            except:
+                return {"message": "An error occurred inserting the item."}, 500
         else:
             item = {'name': name, 'price': data['price']}
-            update_item(item['name'], data['price'])
+            try:
+                self.update_item(item['name'], data['price'])
+            except:
+                return {"message": "An error occurred updating the item."}, 500
         return item
 
 class ItemList(Resource):

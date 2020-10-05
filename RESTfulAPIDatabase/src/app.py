@@ -17,4 +17,5 @@ api.add_resource(UserRegister, '/register')
 api.add_resource(Item, '/item/<string:name>')
 api.add_resource(ItemList, '/items')
 
-app.run(port=5050, debug=True)
+if __name__ == '__main__':
+    app.run(port=5050, debug=True)
