@@ -17,6 +17,10 @@ def insert_user(parser_data):
         ''', (parser_data['username'],
               parser_data['email'],
               parser_data['password']))
+    message = {
+        "message": "User {} created successfully".format(parser_data['username'])
+    }, 201
+    return message
 
 def update_user(username, email):
     return execute_commit('''
