@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "username": "NathanGilbert6917",
+    "password": "PPAASSSSWWOORRDD",
+    "email": "nag6917@rit.edu"
+  },
+  {
+    "password": "Halloo",
+    "username": "Trickycrazyhalo",
+    "id": 2,
+    "email": "nate-halo@hotmail.com"
+  },
+  {
+    "username": "Trickyexohunter",
+    "password": "ggmate",
+    "email": "weneedmoreminerals@gmail.com",
+    "id": 3
+  },
+  {
+    "email": "gre4525@rit.edu",
+    "id": 4,
+    "password": "PfggWOOrRgDD",
+    "username": "Tricky1337"
+  },
+  {
+    "username": "David",
+    "email": "david@gmail.com",
+    "id": 5,
+    "password": "etengser"
+  },
+  {
+    "username": "Testman6",
+    "password": "j6jredsgfse",
+    "email": "test@gmail.com",
+    "id": 6
+  }
+]
