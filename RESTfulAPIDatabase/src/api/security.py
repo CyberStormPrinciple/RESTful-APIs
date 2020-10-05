@@ -1,9 +1,9 @@
 from werkzeug.security import safe_str_cmp
-from db.user import User
+from db.user import *
 from db.user_db import *
 
 def authenticate(email, password):
-    user = find_by_email(email)
+    user = User.find_by_email(email)
     if user and safe_str_cmp(user.password, password):
         return user
 
